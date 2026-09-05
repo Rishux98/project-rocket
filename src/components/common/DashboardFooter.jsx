@@ -52,11 +52,6 @@ export const DashboardFooter = ({ onGoLanding, onOpenSignUp, onResetFilters }) =
                   <Sparkles className="w-3.5 h-3.5" /> Back to Landing Page
                 </button>
               </li>
-              <li>
-                <button onClick={onOpenSignUp} className="hover:text-indigo-400 transition-colors cursor-pointer flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5" /> Account & Preferences
-                </button>
-              </li>
             </ul>
           </div>
 
@@ -79,12 +74,11 @@ export const DashboardFooter = ({ onGoLanding, onOpenSignUp, onResetFilters }) =
             </div>
           </div>
 
-          {/* Account & Help */}
+          {/* Quick Navigation */}
           <div className="space-y-3">
             <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-200">Quick Navigation</h4>
             <ul className="space-y-2 text-xs text-slate-400">
               <li><button onClick={onGoLanding} className="hover:text-indigo-400 transition-colors cursor-pointer">Platform Overview</button></li>
-              <li><button onClick={onOpenSignUp} className="hover:text-indigo-400 transition-colors cursor-pointer">Join Member Network</button></li>
               <li><a href="#privacy" className="hover:text-indigo-400 transition-colors">Privacy & Data Policy</a></li>
               <li><a href="#terms" className="hover:text-indigo-400 transition-colors">Terms of Service</a></li>
             </ul>

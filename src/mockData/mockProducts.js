@@ -2876,6 +2876,426 @@ export const mockProducts = [
         "unhelpful": 1
       }
     ]
+  },
+  {
+    "id": "prod-31",
+    "name": "ProBook Max 16 M3 Studio",
+    "brand": "ProBook",
+    "category": "Laptops",
+    "price": 239990,
+    "originalPrice": 259990,
+    "rating": 4.9,
+    "reviewCount": 115,
+    "images": [
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Peak performance 16-inch laptop with M3 Max 16-Core CPU, 36-Core GPU, Liquid Retina XDR display, and 48GB Unified Memory.",
+    "specs": {
+      "Processor": "M3 Max 16-Core CPU",
+      "GPU": "36-Core GPU",
+      "RAM": "48GB Unified Memory",
+      "Storage": "1TB Gen4 NVMe SSD"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "Battery Life", "score": 4.8, "count": 65 },
+      { "aspect": "build", "label": "Build Quality", "score": 4.9, "count": 80 },
+      { "aspect": "price", "label": "Value / Price", "score": 4.2, "count": 30 },
+      { "aspect": "performance", "label": "M3 Max Speed", "score": 5.0, "count": 95 }
+    ],
+    "ratingBreakdown": { "1": 0, "2": 1, "3": 3, "4": 15, "5": 96 },
+    "reviews": []
+  },
+  {
+    "id": "prod-32",
+    "name": "Apex Stealth RTX 4090 Monster",
+    "brand": "Apex Gaming",
+    "category": "Gaming",
+    "price": 289990,
+    "originalPrice": 319990,
+    "rating": 4.9,
+    "reviewCount": 140,
+    "images": [
+      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Extreme flagship gaming laptop featuring Intel Core i9-14900HX, NVIDIA RTX 4090 16GB, 64GB DDR5 RAM, and 240Hz Mini-LED display.",
+    "specs": {
+      "Processor": "Intel i9-14900HX",
+      "Graphics": "RTX 4090 16GB (175W)",
+      "RAM": "64GB DDR5 5600MHz",
+      "Storage": "2TB Gen4 NVMe RAID 0"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "Battery Life", "score": 3.1, "count": 35 },
+      { "aspect": "build", "label": "Metal Chassis", "score": 4.8, "count": 90 },
+      { "aspect": "price", "label": "Value / Price", "score": 4.0, "count": 45 },
+      { "aspect": "performance", "label": "RTX 4090 FPS", "score": 5.0, "count": 130 }
+    ],
+    "ratingBreakdown": { "1": 1, "2": 2, "3": 4, "4": 18, "5": 115 },
+    "reviews": []
+  },
+  {
+    "id": "prod-33",
+    "name": "AuraSound Studio Pro Closed-Back",
+    "brand": "AuraSound",
+    "category": "Audio",
+    "price": 29999,
+    "originalPrice": 34999,
+    "rating": 4.8,
+    "reviewCount": 88,
+    "images": [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Professional closed-back monitoring headphones with planar magnetic drivers, ultra-soft lambskin pads, and balanced XLR adapter cable.",
+    "specs": {
+      "Driver": "50mm Planar Magnetic",
+      "Frequency": "5Hz - 50,000Hz",
+      "Impedance": "32 Ohms",
+      "Cable": "3m Braided Silver Copper"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "Wired Audio", "score": 5.0, "count": 20 },
+      { "aspect": "build", "label": "Lambskin Comfort", "score": 4.9, "count": 60 },
+      { "aspect": "price", "label": "Value / Price", "score": 4.5, "count": 40 },
+      { "aspect": "performance", "label": "Planar Soundstage", "score": 4.9, "count": 75 }
+    ],
+    "ratingBreakdown": { "1": 0, "2": 1, "3": 2, "4": 12, "5": 73 },
+    "reviews": []
+  },
+  {
+    "id": "prod-34",
+    "name": "ChronoPulse Ultra Titanium Smartwatch",
+    "brand": "ChronoPulse",
+    "category": "Wearables",
+    "price": 44990,
+    "originalPrice": 49990,
+    "rating": 4.7,
+    "reviewCount": 92,
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Rugged Aerospace-grade titanium smartwatch with dual-frequency GPS, 100m water resistance, ECG sensor, and 14-day battery life.",
+    "specs": {
+      "Case": "49mm Grade 5 Titanium",
+      "Display": "1.92\" Sapphire Crystal OLED 3000 nits",
+      "Battery": "14 Days Normal / 60h Precision GPS",
+      "Sensors": "ECG, SpO2, Skin Temp, Altimeter"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "14-Day Battery", "score": 4.9, "count": 70 },
+      { "aspect": "build", "label": "Titanium & Sapphire", "score": 4.9, "count": 75 },
+      { "aspect": "price", "label": "Value / Price", "score": 4.3, "count": 35 },
+      { "aspect": "performance", "label": "GPS & Health Tracking", "score": 4.8, "count": 80 }
+    ],
+    "ratingBreakdown": { "1": 1, "2": 2, "3": 3, "4": 14, "5": 72 },
+    "reviews": []
+  },
+  {
+    "id": "prod-35",
+    "name": "CineView 8K Full-Frame Cinema Camera",
+    "brand": "Optix Vision",
+    "category": "Cameras",
+    "price": 219900,
+    "originalPrice": 239900,
+    "rating": 4.9,
+    "reviewCount": 64,
+    "images": [
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Professional 8K 60fps cinema camera featuring 16-stop dynamic range, internal ProRes RAW recording, dual native ISO, and AI face-autofocus.",
+    "specs": {
+      "Sensor": "36x24mm Full-Frame BSI CMOS",
+      "Video": "8K 60fps / 4K 120fps ProRes RAW",
+      "Dynamic Range": "16+ Stops",
+      "Mount": "E-Mount & PL Mount Compatible"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "V-Mount Battery", "score": 4.4, "count": 25 },
+      { "aspect": "build", "label": "Magnesium Body", "score": 4.9, "count": 50 },
+      { "aspect": "price", "label": "Cinema Value", "score": 4.6, "count": 30 },
+      { "aspect": "performance", "label": "8K ProRes Clarity", "score": 5.0, "count": 58 }
+    ],
+    "ratingBreakdown": { "1": 0, "2": 0, "3": 2, "4": 8, "5": 54 },
+    "reviews": []
+  },
+  {
+    "id": "prod-36",
+    "name": "Nexus Edge 15 OLED Convertible",
+    "brand": "Nexus Tech",
+    "category": "Laptops",
+    "price": 99990,
+    "originalPrice": 109990,
+    "rating": 4.6,
+    "reviewCount": 78,
+    "images": [
+      "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Versatile 360-degree 2-in-1 touchscreen laptop with 15.6\" 4K OLED display, Intel Core Ultra 7, included active pen, and thunderbolt 4 ports.",
+    "specs": {
+      "Processor": "Intel Core Ultra 7 155H",
+      "Display": "15.6\" 4K Touch OLED 360-degree",
+      "RAM": "16GB LPDDR5X",
+      "Storage": "1TB PCIe Gen4 SSD"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "Battery Life", "score": 4.4, "count": 45 },
+      { "aspect": "build", "label": "360 Hinge Build", "score": 4.7, "count": 50 },
+      { "aspect": "price", "label": "Value / Price", "score": 4.6, "count": 40 },
+      { "aspect": "performance", "label": "Core Ultra 7", "score": 4.7, "count": 60 }
+    ],
+    "ratingBreakdown": { "1": 1, "2": 2, "3": 5, "4": 15, "5": 55 },
+    "reviews": []
+  },
+  {
+    "id": "prod-37",
+    "name": "Vortex Wireless Mechanical RGB Keyboard",
+    "brand": "Vortex Gaming",
+    "category": "Gaming",
+    "price": 12999,
+    "originalPrice": 14999,
+    "rating": 4.8,
+    "reviewCount": 105,
+    "images": [
+      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Custom hot-swappable 75% mechanical gaming keyboard with gasket mount design, pre-lubed linear switches, and per-key RGB backlighting.",
+    "specs": {
+      "Switches": "Hot-swappable Pre-lubed Linear",
+      "Mounting": "Gasket Mount Double Silicone Dampening",
+      "Connectivity": "2.4GHz Wireless, Bluetooth 5.1, USB-C",
+      "Battery": "4000mAh (200 Hours RGB Off)"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "Battery Life", "score": 4.8, "count": 60 },
+      { "aspect": "build", "label": "Gasket Mount & PBT", "score": 4.9, "count": 80 },
+      { "aspect": "price", "label": "Value / Price", "score": 4.7, "count": 55 },
+      { "aspect": "performance", "label": "Low Latency Typing", "score": 4.9, "count": 90 }
+    ],
+    "ratingBreakdown": { "1": 0, "2": 1, "3": 3, "4": 16, "5": 85 },
+    "reviews": []
+  },
+  {
+    "id": "prod-38",
+    "name": "SonicBlast Wave 500 Subwoofer Bar",
+    "brand": "SonicBlast",
+    "category": "Audio",
+    "price": 42990,
+    "originalPrice": 47990,
+    "rating": 4.7,
+    "reviewCount": 72,
+    "images": [
+      "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Immersive 7.1.4 Surround Soundbar system with wireless rear satellite speakers, 10-inch subwoofer, and Google Cast / AirPlay 2 support.",
+    "specs": {
+      "Output": "600W Total System RMS",
+      "Format": "Dolby Atmos, DTS:X, Spatial Audio",
+      "Wireless": "Dual Rear Speakers + 10\" Subwoofer",
+      "Inputs": "HDMI eARC 4K Passthrough, Optical, Bluetooth"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "Power Supply", "score": 4.5, "count": 20 },
+      { "aspect": "build", "label": "Metal Grille Build", "score": 4.8, "count": 50 },
+      { "aspect": "price", "label": "Value / Price", "score": 4.6, "count": 35 },
+      { "aspect": "performance", "label": "Bass & Atmos Immersion", "score": 4.9, "count": 62 }
+    ],
+    "ratingBreakdown": { "1": 1, "2": 1, "3": 3, "4": 12, "5": 55 },
+    "reviews": []
+  },
+  {
+    "id": "prod-39",
+    "name": "FitPulse Active GPS Fitness Tracker",
+    "brand": "FitPulse",
+    "category": "Wearables",
+    "price": 6999,
+    "originalPrice": 8999,
+    "rating": 4.4,
+    "reviewCount": 130,
+    "images": [
+      "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Sleek AMOLED health & fitness band with standalone built-in GPS, continuous heart rate, Sleep Score, and 50m water resistance.",
+    "specs": {
+      "Display": "1.62\" Curved AMOLED Always-On",
+      "Battery": "14 Days Playback / 6 Days Heavy",
+      "GPS": "Built-in Dual-band GNSS",
+      "Sensors": "Heart Rate, SpO2, VO2 Max, Stress Tracker"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "14-Day Battery", "score": 4.9, "count": 95 },
+      { "aspect": "build", "label": "Lightweight Band", "score": 4.5, "count": 70 },
+      { "aspect": "price", "label": "Value / Price", "score": 4.8, "count": 110 },
+      { "aspect": "performance", "label": "GPS & Step Accuracy", "score": 4.4, "count": 85 }
+    ],
+    "ratingBreakdown": { "1": 2, "2": 4, "3": 10, "4": 34, "5": 80 },
+    "reviews": []
+  },
+  {
+    "id": "prod-40",
+    "name": "Optix 4K Vlog Compact Mirrorless",
+    "brand": "Optix Vision",
+    "category": "Cameras",
+    "price": 64990,
+    "originalPrice": 71990,
+    "rating": 4.8,
+    "reviewCount": 85,
+    "images": [
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Purpose-built 4K content creation camera featuring flip-out touchscreen, directional 3-capsule mic, Product Showcase AF, and webcam mode.",
+    "specs": {
+      "Sensor": "20.1MP 1-inch Exmor RS Stacked CMOS",
+      "Lens": "24-70mm f/1.8-2.8 Zeiss Vario-Sonnar",
+      "Video": "4K 30p / FHD 120p Slow-Motion",
+      "Screen": "3.0\" Side-Opening Vari-angle Touch Screen"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "USB-C Power Stream", "score": 4.3, "count": 30 },
+      { "aspect": "build", "label": "Compact Ergonomics", "score": 4.8, "count": 60 },
+      { "aspect": "price", "label": "Value / Price", "score": 4.7, "count": 50 },
+      { "aspect": "performance", "label": "Auto-Focus & 4K", "score": 4.9, "count": 72 }
+    ],
+    "ratingBreakdown": { "1": 0, "2": 1, "3": 4, "4": 15, "5": 65 },
+    "reviews": []
+  },
+  {
+    "id": "prod-41",
+    "name": "PixelVerse Ultra 5G Flagship",
+    "brand": "CloudStudio",
+    "category": "Smartphones",
+    "price": 89999,
+    "originalPrice": 99999,
+    "rating": 4.8,
+    "reviewCount": 160,
+    "images": [
+      "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Ultra flagship smartphone with 200MP periscope zoom camera, Snapdragon 8 Gen 3 processor, titanium frame, and 7 years of OS updates.",
+    "specs": {
+      "Processor": "Snapdragon 8 Gen 3 (4nm)",
+      "Display": "6.8\" QHD+ Dynamic AMOLED 2X 120Hz 2600 nits",
+      "Camera": "200MP Main + 50MP 5x Periscope + 12MP UltraWide",
+      "Battery": "5000mAh (45W Fast Charge + 15W Wireless)"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "5000mAh Battery", "score": 4.7, "count": 110 },
+      { "aspect": "build", "label": "Titanium Armor", "score": 4.9, "count": 120 },
+      { "aspect": "price", "label": "Value / Price", "score": 4.3, "count": 55 },
+      { "aspect": "performance", "label": "200MP Camera & Gen 3", "score": 5.0, "count": 145 }
+    ],
+    "ratingBreakdown": { "1": 1, "2": 2, "3": 6, "4": 25, "5": 126 },
+    "reviews": []
+  },
+  {
+    "id": "prod-42",
+    "name": "CyberDesk 34\" Curved 240Hz OLED Monitor",
+    "brand": "Vortex Gaming",
+    "category": "Gaming",
+    "price": 79990,
+    "originalPrice": 89990,
+    "rating": 4.9,
+    "reviewCount": 90,
+    "images": [
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Ultra-wide 34-inch QD-OLED curved gaming monitor with 240Hz refresh rate, 0.03ms response time, DisplayHDR True Black 400, and USB-C 90W Hub.",
+    "specs": {
+      "Panel": "34\" UWQHD (3440x1440) 1800R QD-OLED",
+      "Refresh": "240Hz / 0.03ms GTG Response",
+      "HDR": "DisplayHDR True Black 400 (1000 nits Peak)",
+      "Ports": "USB-C 90W PD, DisplayPort 1.4, 2x HDMI 2.1"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "90W Power Output", "score": 4.6, "count": 30 },
+      { "aspect": "build", "label": "Metal Ergonomic Stand", "score": 4.9, "count": 70 },
+      { "aspect": "price", "label": "OLED Value", "score": 4.7, "count": 50 },
+      { "aspect": "performance", "label": "0.03ms Response & Colors", "score": 5.0, "count": 82 }
+    ],
+    "ratingBreakdown": { "1": 0, "2": 1, "3": 2, "4": 12, "5": 75 },
+    "reviews": []
+  },
+  {
+    "id": "prod-43",
+    "name": "ZenithPad Air 11\" Stylus Tablet",
+    "brand": "Zenith Tech",
+    "category": "Laptops",
+    "price": 54990,
+    "originalPrice": 59990,
+    "rating": 4.7,
+    "reviewCount": 82,
+    "images": [
+      "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Ultra-portable 11-inch Liquid Retina tablet with M2 chip, Apple Pencil Pro support, landscape stereo speakers, and all-day battery.",
+    "specs": {
+      "Processor": "Zenith M2 8-Core CPU / 10-Core GPU",
+      "Display": "11\" Liquid Retina (2360x1640) True Tone",
+      "Connectivity": "Wi-Fi 6E + 5G Cellular Optional",
+      "Weight": "462 grams"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "All-Day Battery", "score": 4.8, "count": 60 },
+      { "aspect": "build", "label": "Recycled Aluminum", "score": 4.9, "count": 65 },
+      { "aspect": "price", "label": "Value / Price", "score": 4.5, "count": 45 },
+      { "aspect": "performance", "label": "M2 Speed & Drawing", "score": 4.8, "count": 72 }
+    ],
+    "ratingBreakdown": { "1": 1, "2": 1, "3": 3, "4": 15, "5": 62 },
+    "reviews": []
+  },
+  {
+    "id": "prod-44",
+    "name": "AuraSound Sport Wing ANC Earbuds",
+    "brand": "AuraSound",
+    "category": "Audio",
+    "price": 6499,
+    "originalPrice": 7999,
+    "rating": 4.5,
+    "reviewCount": 110,
+    "images": [
+      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Secure-fit wireless workout earbuds with flexible ear wings, IPX7 sweatproof rating, active noise cancellation, and 30-hour battery life.",
+    "specs": {
+      "Fit": "Flexible Secure-Fit Ear Hooks",
+      "Waterproofing": "IPX7 Waterproof & Sweatproof",
+      "Battery": "7.5h Earbuds + 22.5h Charging Case",
+      "Bluetooth": "5.3 with Fast Pair"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "30-Hour Total Battery", "score": 4.7, "count": 80 },
+      { "aspect": "build", "label": "IPX7 Sweatproof", "score": 4.8, "count": 85 },
+      { "aspect": "price", "label": "Value / Price", "score": 4.7, "count": 90 },
+      { "aspect": "performance", "label": "Workout Fit & ANC", "score": 4.5, "count": 75 }
+    ],
+    "ratingBreakdown": { "1": 2, "2": 3, "3": 8, "4": 27, "5": 70 },
+    "reviews": []
+  },
+  {
+    "id": "prod-45",
+    "name": "ChronoPulse Solar Expedition Watch",
+    "brand": "ChronoPulse",
+    "category": "Wearables",
+    "price": 24990,
+    "originalPrice": 28999,
+    "rating": 4.8,
+    "reviewCount": 76,
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Solar-charged outdoor GPS smartwatch with infinite battery life in solar mode, topographic maps, flashlight, and tactical compass.",
+    "specs": {
+      "Battery": "Infinite in Solar Mode / 40 Days Normal",
+      "Lens": "Power Glass Solar Charging",
+      "Build": "Fiber-reinforced polymer with steel bezel",
+      "Water Rating": "10 ATM (100 meters)"
+    },
+    "aspectScores": [
+      { "aspect": "battery", "label": "Solar Infinite Power", "score": 5.0, "count": 65 },
+      { "aspect": "build", "label": "10 ATM Steel Bezel", "score": 4.9, "count": 55 },
+      { "aspect": "price", "label": "Value / Price", "score": 4.6, "count": 35 },
+      { "aspect": "performance", "label": "Topo Maps & GPS", "score": 4.8, "count": 60 }
+    ],
+    "ratingBreakdown": { "1": 0, "2": 1, "3": 3, "4": 14, "5": 58 },
+    "reviews": []
   }
 ];
 

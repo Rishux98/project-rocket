@@ -108,3 +108,17 @@
 .scroll-pop-in {
   animation: scrollPopIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
