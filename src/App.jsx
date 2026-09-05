@@ -30,8 +30,8 @@ export function App() {
   const [products, setProducts] = useState([]);
   const [isLoadingProducts, setIsLoadingProducts] = useState(true);
 
-  // Compare State
-  const [comparedIds, setComparedIds] = useState([]);
+  // Compare State (Active by default with 2 items)
+  const [comparedIds, setComparedIds] = useState(['prod-1', 'prod-7']);
   const [comparedProducts, setComparedProducts] = useState([]);
   const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
 
@@ -213,12 +213,33 @@ export function App() {
   // Render Landing Page first if currentView === 'landing'
   if (currentView === 'landing') {
     return (
-      <LandingPage
-        currentUser={currentUser}
-        onOpenSignUp={() => setCurrentView('signup')}
-        onExploreCatalog={handleExploreDashboard}
-        onSelectProduct={handleSelectProductFromLanding}
-      />
+      <div className="relative">
+        <LandingPage
+          currentUser={currentUser}
+          onOpenSignUp={() => setCurrentView('signup')}
+          onExploreCatalog={handleExploreDashboard}
+          onSelectProduct={handleSelectProductFromLanding}
+        />
+
+        {/* Active Sticky Bottom Compare Tray */}
+        <CompareTray
+          comparedProducts={comparedProducts}
+          onRemoveFromCompare={(id) => setComparedIds(comparedIds.filter(i => i !== id))}
+          onClearCompare={() => setComparedIds([])}
+          onOpenModal={() => setIsCompareModalOpen(true)}
+        />
+
+        {/* Side-by-Side Compare Modal */}
+        <CompareModal
+          isOpen={isCompareModalOpen}
+          onClose={() => setIsCompareModalOpen(false)}
+          products={comparedProducts}
+          onSelectProduct={(id) => {
+            setIsCompareModalOpen(false);
+            handleSelectProductFromLanding(id);
+          }}
+        />
+      </div>
     );
   }
 
@@ -301,7 +322,7 @@ export function App() {
       <footer className="border-t border-slate-200 py-8 px-4 text-center text-xs text-slate-500 space-y-2 mt-12 bg-white shadow-xs">
         <div className="flex items-center justify-center gap-2 font-bold text-slate-700">
           <Sparkles className="w-4 h-4 text-indigo-600" />
-          <span>PS3 Product Review Explorer & Q&A Platform</span>
+          <span>ReviewPulse Product Review Explorer & Q&A Platform</span>
         </div>
         <p>Built with React 19, Tailwind CSS, Recharts & Abstracted API Layer.</p>
       </footer>

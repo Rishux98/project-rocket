@@ -117,7 +117,7 @@ export const LandingPage = ({ onExploreCatalog, onSelectProduct, onOpenSignUp, c
                 ReviewPulse
               </span>
               <span className="ml-2 px-2 py-0.5 text-[10px] font-bold bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-full">
-                PS3 AI
+                AI Powered
               </span>
             </div>
           </div>
@@ -385,7 +385,7 @@ export const LandingPage = ({ onExploreCatalog, onSelectProduct, onOpenSignUp, c
                     ReviewPulse
                   </span>
                   <span className="px-2 py-0.5 text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 rounded-full">
-                    PS3 AI
+                    AI Powered
                   </span>
                 </div>
               </div>

@@ -21,7 +21,7 @@ export const Header = ({ searchQuery, setSearchQuery, compareCount, onOpenCompar
                   ReviewPulse
                 </span>
                 <span className="px-2 py-0.5 text-[10px] font-bold bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-full flex items-center gap-1">
-                  <Sparkles className="w-2.5 h-2.5" /> PS3 AI
+                  <Sparkles className="w-2.5 h-2.5" /> AI Powered
                 </span>
               </div>
               <p className="text-xs text-slate-500 font-medium">Next-Gen Product Intelligence Dashboard</p>
@@ -38,15 +38,13 @@ export const Header = ({ searchQuery, setSearchQuery, compareCount, onOpenCompar
               <Home className="w-4 h-4" />
             </button>
 
-            {compareCount > 0 && (
-              <button
-                onClick={onOpenCompare}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-medium text-xs shadow-md shadow-indigo-600/30 active:scale-95 transition-all"
-              >
-                <Layers className="w-3.5 h-3.5" />
-                Compare ({compareCount})
-              </button>
-            )}
+            <button
+              onClick={onOpenCompare}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-medium text-xs shadow-md shadow-indigo-600/30 active:scale-95 transition-all cursor-pointer"
+            >
+              <Layers className="w-3.5 h-3.5" />
+              Compare ({compareCount})
+            </button>
           </div>
         </div>
 
@@ -74,7 +72,7 @@ export const Header = ({ searchQuery, setSearchQuery, compareCount, onOpenCompar
         <div className="hidden md:flex items-center gap-3">
           <button
             onClick={onGoLanding}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-indigo-600 bg-slate-100 hover:bg-indigo-50 border border-slate-200 transition-all"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-indigo-600 bg-slate-100 hover:bg-indigo-50 border border-slate-200 transition-all cursor-pointer"
           >
             <Home className="w-3.5 h-3.5" />
             <span>Home</span>
@@ -97,16 +95,11 @@ export const Header = ({ searchQuery, setSearchQuery, compareCount, onOpenCompar
 
           <button
             onClick={onOpenCompare}
-            disabled={compareCount === 0}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 ${
-              compareCount > 0
-                ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-600/20 cursor-pointer active:scale-95'
-                : 'bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed'
-            }`}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-600/20 cursor-pointer active:scale-95 transition-all duration-200"
           >
             <Layers className="w-4 h-4" />
             <span>Compare Tray</span>
-            <span className={`px-2 py-0.5 rounded-full text-[11px] font-extrabold ${compareCount > 0 ? 'bg-white/20 text-white' : 'bg-slate-200 text-slate-500'}`}>
+            <span className="px-2 py-0.5 rounded-full text-[11px] font-extrabold bg-white/20 text-white">
               {compareCount}/3
             </span>
           </button>
