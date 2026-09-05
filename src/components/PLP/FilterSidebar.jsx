@@ -104,20 +104,20 @@ export const FilterSidebar = ({
       <div>
         <div className="flex items-center justify-between text-xs mb-2">
           <span className="font-bold uppercase tracking-wider text-slate-500 text-[11px]">Max Price</span>
-          <span className="text-indigo-600 font-extrabold">${priceMax}</span>
+          <span className="text-indigo-600 font-extrabold">₹{Number(priceMax).toLocaleString('en-IN')}</span>
         </div>
         <input
           type="range"
-          min="100"
-          max="2500"
-          step="50"
+          min="2000"
+          max="200000"
+          step="2000"
           value={priceMax}
           onChange={(e) => setPriceMax(Number(e.target.value))}
           className="w-full accent-indigo-600 bg-slate-200 h-1.5 rounded-lg cursor-pointer"
         />
         <div className="flex justify-between text-[10px] text-slate-400 mt-1 font-mono">
-          <span>$100</span>
-          <span>$2,500</span>
+          <span>₹2,000</span>
+          <span>₹2,00,000</span>
         </div>
       </div>
 

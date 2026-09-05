@@ -56,7 +56,7 @@ export const CompareModal = ({ isOpen, onClose, products, onSelectProduct }) => 
                       <span>{prod.rating}</span>
                       <span className="text-slate-400 font-normal">({prod.reviewCount})</span>
                     </div>
-                    <div className="text-lg font-extrabold text-slate-900 mt-1">${prod.price}</div>
+                    <div className="text-lg font-extrabold text-slate-900 mt-1">₹{Number(prod.price).toLocaleString('en-IN')}</div>
                   </div>
 
                   <button

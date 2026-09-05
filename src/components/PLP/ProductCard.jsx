@@ -87,11 +87,11 @@ export const ProductCard = ({ product, onSelectProduct, isCompared, onToggleComp
         <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
           <div>
             <div className="text-lg font-extrabold text-slate-900">
-              ${product.price}
+              ₹{Number(product.price).toLocaleString('en-IN')}
             </div>
             {product.originalPrice && (
               <div className="text-[11px] text-slate-400 line-through">
-                ${product.originalPrice}
+                ₹{Number(product.originalPrice).toLocaleString('en-IN')}
               </div>
             )}
           </div>
