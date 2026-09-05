@@ -4,14 +4,16 @@ import { FilterSidebar } from './components/PLP/FilterSidebar';
 import { ProductGrid } from './components/PLP/ProductGrid';
 import { ProductDetail } from './components/PDP/ProductDetail';
 import { LandingPage } from './components/Landing/LandingPage';
+import { SignUpPage } from './components/Auth/SignUpPage';
 import { CompareTray } from './components/Compare/CompareTray';
 import { CompareModal } from './components/Compare/CompareModal';
 import { apiService } from './services/apiService';
 import { Sparkles } from 'lucide-react';
 
 export function App() {
-  // Main Navigation Mode: 'landing' | 'dashboard'
+  // Main Navigation Mode: 'landing' | 'dashboard' | 'signup'
   const [currentView, setCurrentView] = useState('landing');
+  const [currentUser, setCurrentUser] = useState(null);
 
   // Product Selection & View State
   const [selectedProductId, setSelectedProductId] = useState(null);
@@ -192,10 +194,27 @@ export function App() {
     setSelectedProductId(id);
   };
 
+  // Render Sign Up Page
+  if (currentView === 'signup') {
+    return (
+      <SignUpPage
+        currentUser={currentUser}
+        onSignUpSuccess={(user) => {
+          setCurrentUser(user);
+          setCurrentView('dashboard');
+        }}
+        onBackToLanding={() => setCurrentView('landing')}
+        onGoDashboard={() => setCurrentView('dashboard')}
+      />
+    );
+  }
+
   // Render Landing Page first if currentView === 'landing'
   if (currentView === 'landing') {
     return (
       <LandingPage
+        currentUser={currentUser}
+        onOpenSignUp={() => setCurrentView('signup')}
         onExploreCatalog={handleExploreDashboard}
         onSelectProduct={handleSelectProductFromLanding}
       />
@@ -213,6 +232,8 @@ export function App() {
         onOpenCompare={() => setIsCompareModalOpen(true)}
         onGoHome={() => setSelectedProductId(null)}
         onGoLanding={() => setCurrentView('landing')}
+        currentUser={currentUser}
+        onOpenSignUp={() => setCurrentView('signup')}
       />
 
       {/* Main Page Layout Container */}
