@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Rocket, Sparkles, Mail, Lock, User, Eye, EyeOff, 
+  ShoppingCart, Sparkles, Mail, Lock, User, Eye, EyeOff, 
   ArrowRight, CheckCircle2, ShieldCheck, 
   X, ChevronLeft 
 } from 'lucide-react';
@@ -107,9 +107,9 @@ export const SignUpPage = ({ onSignUpSuccess, onNavigateToLogin, onBackToLanding
 
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white shadow-md shadow-indigo-600/20">
-            <Rocket className="w-4 h-4" />
+            <ShoppingCart className="w-4 h-4" />
           </div>
-          <span className="font-extrabold text-lg tracking-tight text-slate-900">ReviewPulse</span>
+          <span className="font-extrabold text-lg tracking-tight text-slate-900">QueryCart</span>
         </div>
       </header>
 
@@ -124,7 +124,7 @@ export const SignUpPage = ({ onSignUpSuccess, onNavigateToLogin, onBackToLanding
               <span>{isLoginMode ? 'Welcome Back' : 'Get Started Free'}</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              {isLoginMode ? 'Sign in to ReviewPulse' : 'Create your account'}
+              {isLoginMode ? 'Sign in to QueryCart' : 'Create your account'}
             </h1>
             <p className="text-xs text-slate-500 font-medium">
               {isLoginMode 
@@ -167,7 +167,7 @@ export const SignUpPage = ({ onSignUpSuccess, onNavigateToLogin, onBackToLanding
                 {isLoginMode ? 'Logged in successfully!' : 'Account created successfully!'}
               </h3>
               <p className="text-xs text-slate-600 font-medium">
-                Redirecting you to the ReviewPulse intelligence dashboard...
+                Redirecting you to the QueryCart intelligence dashboard...
               </p>
             </div>
           ) : (
@@ -367,7 +367,7 @@ export const SignUpPage = ({ onSignUpSuccess, onNavigateToLogin, onBackToLanding
 
       {/* Footer */}
       <footer className="relative z-10 px-6 py-4 text-center text-xs text-slate-500">
-        <p>© 2026 ReviewPulse. Secure SSL Encrypted Authentication.</p>
+        <p>© 2026 QueryCart. Secure SSL Encrypted Authentication.</p>
       </footer>
 
     </div>
