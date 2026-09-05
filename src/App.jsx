@@ -8,6 +8,7 @@ import { SignUpPage } from './components/Auth/SignUpPage';
 import { CompareTray } from './components/Compare/CompareTray';
 import { CompareModal } from './components/Compare/CompareModal';
 import { apiService } from './services/apiService';
+import { DashboardFooter } from './components/common/DashboardFooter';
 import { Sparkles } from 'lucide-react';
 
 export function App() {
@@ -219,6 +220,9 @@ export function App() {
           onOpenSignUp={() => setCurrentView('signup')}
           onExploreCatalog={handleExploreDashboard}
           onSelectProduct={handleSelectProductFromLanding}
+          onOpenCompare={() => setIsCompareModalOpen(true)}
+          comparedIds={comparedIds}
+          onToggleCompare={handleToggleCompare}
         />
 
         {/* Active Sticky Bottom Compare Tray */}
@@ -234,6 +238,7 @@ export function App() {
           isOpen={isCompareModalOpen}
           onClose={() => setIsCompareModalOpen(false)}
           products={comparedProducts}
+          onExploreCatalog={handleExploreDashboard}
           onSelectProduct={(id) => {
             setIsCompareModalOpen(false);
             handleSelectProductFromLanding(id);
@@ -312,20 +317,27 @@ export function App() {
         isOpen={isCompareModalOpen}
         onClose={() => setIsCompareModalOpen(false)}
         products={comparedProducts}
+        onExploreCatalog={() => {
+          setSelectedProductId(null);
+        }}
         onSelectProduct={(id) => {
           setIsCompareModalOpen(false);
           setSelectedProductId(id);
         }}
       />
 
-      {/* Footer */}
-      <footer className="border-t border-slate-200 py-8 px-4 text-center text-xs text-slate-500 space-y-2 mt-12 bg-white shadow-xs">
-        <div className="flex items-center justify-center gap-2 font-bold text-slate-700">
-          <Sparkles className="w-4 h-4 text-indigo-600" />
-          <span>ReviewPulse Product Review Explorer & Q&A Platform</span>
-        </div>
-        <p>Built with React 19, Tailwind CSS, Recharts & Abstracted API Layer.</p>
-      </footer>
+      {/* Dashboard Professional Footer */}
+      <DashboardFooter
+        onGoLanding={() => setCurrentView('landing')}
+        onOpenSignUp={() => setCurrentView('signup')}
+        onResetFilters={() => {
+          setSelectedCategory('all');
+          setSearchQuery('');
+          setMinRating(0);
+          setPriceMax(200000);
+          setSortBy('rating');
+        }}
+      />
 
     </div>
   );

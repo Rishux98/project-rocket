@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Rocket, Layers, Sparkles, X, Home, User as UserIcon } from 'lucide-react';
+import { Search, ShoppingCart, Layers, Sparkles, X, Home, User as UserIcon } from 'lucide-react';
 
 export const Header = ({ searchQuery, setSearchQuery, compareCount, onOpenCompare, onGoHome, onGoLanding, currentUser, onOpenSignUp }) => {
   return (
@@ -13,12 +13,12 @@ export const Header = ({ searchQuery, setSearchQuery, compareCount, onOpenCompar
             className="flex items-center gap-3 group focus:outline-none text-left cursor-pointer"
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-200">
-              <Rocket className="w-5 h-5 animate-pulse" />
+              <ShoppingCart className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-extrabold text-xl tracking-tight text-slate-900">
-                  ReviewPulse
+                  QueryCart
                 </span>
                 <span className="px-2 py-0.5 text-[10px] font-bold bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-full flex items-center gap-1">
                   <Sparkles className="w-2.5 h-2.5" /> AI Powered
