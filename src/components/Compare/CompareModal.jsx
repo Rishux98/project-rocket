@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Star, Layers, Sparkles, Plus, AlertCircle } from 'lucide-react';
+import { X, Star, Layers, Sparkles, Plus, AlertCircle, Award, TrendingDown } from 'lucide-react';
 import { aspectLabels } from '../../mockData/mockProducts';
 
 export const CompareModal = ({ isOpen, onClose, products = [], onSelectProduct, onExploreCatalog }) => {
@@ -56,6 +56,10 @@ export const CompareModal = ({ isOpen, onClose, products = [], onSelectProduct, 
   const maxSlots = 3;
   const emptySlotsCount = maxSlots - products.length;
 
+  // Calculate dynamic winners
+  const highestRatingValue = Math.max(...products.map(p => p.rating || 0));
+  const lowestPriceValue = Math.min(...products.map(p => p.price || Infinity));
+
   const allSpecKeys = Array.from(
     new Set(products.flatMap((p) => Object.keys(p.specs || {})))
   );
@@ -100,33 +104,53 @@ export const CompareModal = ({ isOpen, onClose, products = [], onSelectProduct, 
               </div>
 
               {/* Render Selected Products */}
-              {products.map((prod) => (
-                <div key={prod.id} className="space-y-3 bg-slate-50 p-4 rounded-2xl border border-slate-200 text-center flex flex-col justify-between shadow-2xs hover:border-indigo-300 transition-all">
-                  <div className="relative h-32 rounded-xl overflow-hidden bg-slate-100">
-                    <img src={prod.images[0]} alt={prod.name} className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <div className="text-[11px] text-indigo-600 font-bold uppercase tracking-wider">{prod.brand}</div>
-                    <h4 className="text-sm font-extrabold text-slate-900 line-clamp-1">{prod.name}</h4>
-                    <div className="flex items-center justify-center gap-1 text-xs font-bold text-amber-600 mt-1">
-                      <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
-                      <span>{prod.rating}</span>
-                      <span className="text-slate-400 font-normal">({prod.reviewCount})</span>
-                    </div>
-                    <div className="text-lg font-extrabold text-slate-900 mt-1">₹{Number(prod.price).toLocaleString('en-IN')}</div>
-                  </div>
+              {products.map((prod) => {
+                const isTopRated = prod.rating === highestRatingValue && products.length > 1;
+                const isBestPrice = prod.price === lowestPriceValue && products.length > 1;
 
-                  <button
-                    onClick={() => {
-                      onClose();
-                      onSelectProduct(prod.id);
-                    }}
-                    className="w-full py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition-all shadow-md shadow-indigo-600/20 cursor-pointer"
-                  >
-                    View Details
-                  </button>
-                </div>
-              ))}
+                return (
+                  <div key={prod.id} className="space-y-3 bg-slate-50 p-4 rounded-2xl border border-slate-200 text-center flex flex-col justify-between shadow-2xs hover:border-indigo-300 transition-all relative">
+                    
+                    {/* Winner Medals Badges */}
+                    <div className="flex flex-wrap gap-1 justify-center absolute -top-2.5 inset-x-0">
+                      {isTopRated && (
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-amber-500 text-white shadow-sm flex items-center gap-1">
+                          <Award className="w-3 h-3" /> Top Rated
+                        </span>
+                      )}
+                      {isBestPrice && (
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-600 text-white shadow-sm flex items-center gap-1">
+                          <TrendingDown className="w-3 h-3" /> Best Price
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="relative h-32 rounded-xl overflow-hidden bg-slate-100 mt-2">
+                      <img src={prod.images[0]} alt={prod.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <div className="text-[11px] text-indigo-600 font-bold uppercase tracking-wider">{prod.brand}</div>
+                      <h4 className="text-sm font-extrabold text-slate-900 line-clamp-1">{prod.name}</h4>
+                      <div className="flex items-center justify-center gap-1 text-xs font-bold text-amber-600 mt-1">
+                        <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
+                        <span>{prod.rating}</span>
+                        <span className="text-slate-400 font-normal">({prod.reviewCount})</span>
+                      </div>
+                      <div className="text-lg font-extrabold text-slate-900 mt-1">₹{Number(prod.price).toLocaleString('en-IN')}</div>
+                    </div>
+
+                    <button
+                      onClick={() => {
+                        onClose();
+                        onSelectProduct(prod.id);
+                      }}
+                      className="w-full py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition-all shadow-md shadow-indigo-600/20 cursor-pointer"
+                    >
+                      View Details
+                    </button>
+                  </div>
+                );
+              })}
 
               {/* Render Empty Slots */}
               {Array.from({ length: emptySlotsCount }).map((_, idx) => (
@@ -158,7 +182,7 @@ export const CompareModal = ({ isOpen, onClose, products = [], onSelectProduct, 
                   </div>
                 ) : (
                   <>
-                    💡 <strong>Head-to-Head AI Summary:</strong> For battery longevity and endurance, choose <span className="text-indigo-700 font-bold">{products[0]?.name}</span>. For peak audio clarity or display fidelity, <span className="text-indigo-700 font-bold">{products[1]?.name || products[0]?.name}</span> scores higher across buyer review aspect matrices.
+                    💡 <strong>Head-to-Head AI Summary:</strong> For highest customer satisfaction and overall rating, <span className="text-indigo-700 font-bold">{products.find(p => p.rating === highestRatingValue)?.name || products[0]?.name}</span> leads the matrix. For budget efficiency, <span className="text-indigo-700 font-bold">{products.find(p => p.price === lowestPriceValue)?.name || products[0]?.name}</span> offers the best value per rupee.
                   </>
                 )}
               </div>

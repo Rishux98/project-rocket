@@ -3,22 +3,21 @@ import { Header } from './components/common/Header';
 import { FilterSidebar } from './components/PLP/FilterSidebar';
 import { ProductGrid } from './components/PLP/ProductGrid';
 import { ProductDetail } from './components/PDP/ProductDetail';
+import { ProductDetailSkeleton } from './components/PDP/ProductDetailSkeleton';
 import { LandingPage } from './components/Landing/LandingPage';
-import { SignUpPage } from './components/Auth/SignUpPage';
 import { CompareTray } from './components/Compare/CompareTray';
 import { CompareModal } from './components/Compare/CompareModal';
 import { apiService } from './services/apiService';
 import { DashboardFooter } from './components/common/DashboardFooter';
-import { Sparkles } from 'lucide-react';
 
 export function App() {
-  // Main Navigation Mode: 'landing' | 'dashboard' | 'signup'
+  // Main Navigation Mode: 'landing' | 'dashboard'
   const [currentView, setCurrentView] = useState('landing');
-  const [currentUser, setCurrentUser] = useState(null);
 
   // Product Selection & View State
   const [selectedProductId, setSelectedProductId] = useState(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isLoadingDetail, setIsLoadingDetail] = useState(false);
 
   // Filter & Search State
   const [searchQuery, setSearchQuery] = useState('');
@@ -68,9 +67,11 @@ export function App() {
     let isMounted = true;
     if (!selectedProductId) {
       setSelectedProduct(null);
+      setIsLoadingDetail(false);
       return;
     }
 
+    setIsLoadingDetail(true);
     const loadSingleProduct = async () => {
       try {
         const data = await apiService.getProductById(selectedProductId);
@@ -79,6 +80,8 @@ export function App() {
         }
       } catch (e) {
         console.error(e);
+      } finally {
+        if (isMounted) setIsLoadingDetail(false);
       }
     };
 
@@ -109,13 +112,13 @@ export function App() {
 
   // Categories list for FilterSidebar
   const categories = [
-    { id: 'all', label: 'All Products', count: 30 },
-    { id: 'audio', label: 'Audio', count: 6 },
-    { id: 'laptops', label: 'Laptops', count: 5 },
-    { id: 'wearables', label: 'Wearables', count: 5 },
-    { id: 'gaming', label: 'Gaming', count: 5 },
-    { id: 'cameras', label: 'Cameras', count: 5 },
-    { id: 'smartphones', label: 'Smartphones', count: 4 }
+    { id: 'all', label: 'All Products', count: products.length || 45 },
+    { id: 'audio', label: 'Audio', count: 10 },
+    { id: 'laptops', label: 'Laptops', count: 8 },
+    { id: 'wearables', label: 'Wearables', count: 8 },
+    { id: 'gaming', label: 'Gaming', count: 8 },
+    { id: 'cameras', label: 'Cameras', count: 6 },
+    { id: 'smartphones', label: 'Smartphones', count: 5 }
   ];
 
   // Compare Toggle Handler
@@ -196,28 +199,11 @@ export function App() {
     setSelectedProductId(id);
   };
 
-  // Render Sign Up Page
-  if (currentView === 'signup') {
-    return (
-      <SignUpPage
-        currentUser={currentUser}
-        onSignUpSuccess={(user) => {
-          setCurrentUser(user);
-          setCurrentView('dashboard');
-        }}
-        onBackToLanding={() => setCurrentView('landing')}
-        onGoDashboard={() => setCurrentView('dashboard')}
-      />
-    );
-  }
-
   // Render Landing Page first if currentView === 'landing'
   if (currentView === 'landing') {
     return (
       <div className="relative">
         <LandingPage
-          currentUser={currentUser}
-          onOpenSignUp={() => setCurrentView('signup')}
           onExploreCatalog={handleExploreDashboard}
           onSelectProduct={handleSelectProductFromLanding}
           onOpenCompare={() => setIsCompareModalOpen(true)}
@@ -231,6 +217,7 @@ export function App() {
           onRemoveFromCompare={(id) => setComparedIds(comparedIds.filter(i => i !== id))}
           onClearCompare={() => setComparedIds([])}
           onOpenModal={() => setIsCompareModalOpen(true)}
+          onSelectProduct={(id) => handleSelectProductFromLanding(id)}
         />
 
         {/* Side-by-Side Compare Modal */}
@@ -259,13 +246,14 @@ export function App() {
         onOpenCompare={() => setIsCompareModalOpen(true)}
         onGoHome={() => setSelectedProductId(null)}
         onGoLanding={() => setCurrentView('landing')}
-        currentUser={currentUser}
-        onOpenSignUp={() => setCurrentView('signup')}
       />
 
       {/* Main Page Layout Container */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8">
-        {selectedProduct ? (
+        {selectedProductId && isLoadingDetail ? (
+          /* Instant Detail Loading Skeleton */
+          <ProductDetailSkeleton onBack={() => setSelectedProductId(null)} />
+        ) : selectedProduct ? (
           /* Product Detail View (PDP) */
           <ProductDetail
             product={selectedProduct}
@@ -299,6 +287,14 @@ export function App() {
               comparedIds={comparedIds}
               onToggleCompare={handleToggleCompare}
               onResetFilters={handleResetFilters}
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+              minRating={minRating}
+              setMinRating={setMinRating}
+              priceMax={priceMax}
+              setPriceMax={setPriceMax}
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
             />
           </div>
         )}
@@ -310,6 +306,7 @@ export function App() {
         onRemoveFromCompare={(id) => setComparedIds(comparedIds.filter(i => i !== id))}
         onClearCompare={() => setComparedIds([])}
         onOpenModal={() => setIsCompareModalOpen(true)}
+        onSelectProduct={(id) => setSelectedProductId(id)}
       />
 
       {/* Side-by-Side Compare Modal */}
