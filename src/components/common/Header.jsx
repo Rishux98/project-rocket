@@ -1,9 +1,9 @@
 import React from 'react';
-import { Search, Rocket, Layers, Sparkles, X, Home } from 'lucide-react';
+import { Search, Rocket, Layers, Sparkles, X, Home, User as UserIcon } from 'lucide-react';
 
-export const Header = ({ searchQuery, setSearchQuery, compareCount, onOpenCompare, onGoHome, onGoLanding }) => {
+export const Header = ({ searchQuery, setSearchQuery, compareCount, onOpenCompare, onGoHome, onGoLanding, currentUser, onOpenSignUp }) => {
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 px-4 lg:px-8 py-3.5 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white/75 backdrop-blur-lg border-b border-slate-200/80 px-4 lg:px-8 py-3.5 shadow-sm transition-all duration-200">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         
         {/* Brand Logo & Navigation */}
@@ -79,6 +79,21 @@ export const Header = ({ searchQuery, setSearchQuery, compareCount, onOpenCompar
             <Home className="w-3.5 h-3.5" />
             <span>Home</span>
           </button>
+
+          {currentUser ? (
+            <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-indigo-50 border border-indigo-100 text-xs font-bold text-indigo-900">
+              <UserIcon className="w-4 h-4 text-indigo-600" />
+              <span>{currentUser.name}</span>
+            </div>
+          ) : (
+            <button
+              onClick={onOpenSignUp}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-indigo-600 bg-slate-100 hover:bg-indigo-50 border border-slate-200 transition-all cursor-pointer"
+            >
+              <UserIcon className="w-4 h-4 text-indigo-600" />
+              <span>Sign Up</span>
+            </button>
+          )}
 
           <button
             onClick={onOpenCompare}

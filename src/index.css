@@ -15,7 +15,7 @@
   body {
     background-color: var(--bg-main);
     color: var(--text-primary);
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     margin: 0;
     min-height: 100vh;
     overflow-x: hidden;
@@ -91,4 +91,20 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* Scroll Pop-In Animations */
+@keyframes scrollPopIn {
+  0% {
+    opacity: 0;
+    transform: translateY(35px) scale(0.93);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.scroll-pop-in {
+  animation: scrollPopIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
