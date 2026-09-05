@@ -97,9 +97,9 @@ export const ProductDetail = ({
             </div>
 
             <div className="flex items-baseline gap-3 mt-4">
-              <span className="text-3xl font-black text-slate-900">${product.price}</span>
+              <span className="text-3xl font-black text-slate-900">₹{Number(product.price).toLocaleString('en-IN')}</span>
               {product.originalPrice && (
-                <span className="text-sm text-slate-400 line-through">${product.originalPrice}</span>
+                <span className="text-sm text-slate-400 line-through">₹{Number(product.originalPrice).toLocaleString('en-IN')}</span>
               )}
             </div>
 

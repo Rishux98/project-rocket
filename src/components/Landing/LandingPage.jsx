@@ -354,7 +354,7 @@ export const LandingPage = ({ onExploreCatalog, onSelectProduct, onOpenSignUp, c
                   <h3 className="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors line-clamp-1">
                     {product.name}
                   </h3>
-                  <div className="text-lg font-extrabold text-slate-900 mt-1">${product.price}</div>
+                  <div className="text-lg font-extrabold text-slate-900 mt-1">₹{Number(product.price).toLocaleString('en-IN')}</div>
                 </div>
 
                 <button className="w-full py-2 rounded-xl bg-slate-100 hover:bg-indigo-600 text-slate-700 hover:text-white font-bold text-xs transition-all cursor-pointer">

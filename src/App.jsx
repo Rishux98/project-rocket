@@ -23,7 +23,7 @@ export function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [minRating, setMinRating] = useState(0);
-  const [priceMax, setPriceMax] = useState(2500);
+  const [priceMax, setPriceMax] = useState(200000);
   const [sortBy, setSortBy] = useState('rating');
 
   // Data State
@@ -108,12 +108,13 @@ export function App() {
 
   // Categories list for FilterSidebar
   const categories = [
-    { id: 'all', label: 'All Products', count: 5 },
-    { id: 'audio', label: 'Audio', count: 1 },
-    { id: 'laptops', label: 'Laptops', count: 1 },
-    { id: 'wearables', label: 'Wearables', count: 1 },
-    { id: 'gaming', label: 'Gaming', count: 1 },
-    { id: 'cameras', label: 'Cameras', count: 1 }
+    { id: 'all', label: 'All Products', count: 30 },
+    { id: 'audio', label: 'Audio', count: 6 },
+    { id: 'laptops', label: 'Laptops', count: 5 },
+    { id: 'wearables', label: 'Wearables', count: 5 },
+    { id: 'gaming', label: 'Gaming', count: 5 },
+    { id: 'cameras', label: 'Cameras', count: 5 },
+    { id: 'smartphones', label: 'Smartphones', count: 4 }
   ];
 
   // Compare Toggle Handler
@@ -179,7 +180,7 @@ export function App() {
     setSelectedCategory('all');
     setSearchQuery('');
     setMinRating(0);
-    setPriceMax(2500);
+    setPriceMax(200000);
     setSortBy('rating');
   };
 
